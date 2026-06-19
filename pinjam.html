@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peminjaman - SiPustaka</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">📚 SiPustaka</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="koleksi.html">Koleksi Buku</a></li>
+          <li class="nav-item"><a class="nav-link active" href="pinjam.html">Peminjaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+        <span class="text-white me-3">
+          ❤️ <span class="badge bg-danger" id="badgeFavorit">0</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row g-4">
+      
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-header bg-success text-white">
+            <strong>📝 Form Peminjaman Buku</strong>
+          </div>
+          <div class="card-body">
+            <div id="alertPinjam" class="d-none mb-3"></div>
+            <form id="formPinjam">
+              <div class="mb-3">
+                <label for="pilihBuku" class="form-label">Pilih Buku <span class="text-danger">*</span></label>
+                <select class="form-select" id="pilihBuku">
+                  <option value="">-- Pilih Buku --</option>
+                </select>
+                <div class="invalid-feedback">Silakan pilih buku terlebih dahulu.</div>
+              </div>
+              <div class="mb-3">
+                <label for="namaPeminjam" class="form-label">Nama Peminjam <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="namaPeminjam" placeholder="Nama lengkap peminjam">
+                <div class="invalid-feedback">Nama peminjam tidak boleh kosong.</div>
+              </div>
+              <div class="mb-3">
+                <label for="tanggalPinjam" class="form-label">Tanggal Pinjam</label>
+                <input type="date" class="form-control" id="tanggalPinjam">
+              </div>
+              <div class="mb-3">
+                <label for="durasiPinjam" class="form-label">Durasi Peminjaman</label>
+                <select class="form-select" id="durasiPinjam">
+                  <option value="7">7 hari</option>
+                  <option value="14" selected>14 hari</option>
+                  <option value="21">21 hari</option>
+                </select>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-success">Catat Peminjaman</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <strong>📋 Daftar Peminjaman Aktif</strong>
+            <span class="badge bg-success" id="badgeJumlahPinjam">0</span>
+          </div>
+          <div class="card-body p-0">
+            <div id="daftarPinjaman"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toastPinjam" class="toast border-0" role="alert">
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto">✅ Berhasil</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body" id="isiToastPinjam"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

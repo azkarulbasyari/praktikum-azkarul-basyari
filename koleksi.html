@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi Buku - SiPustaka</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">📚 SiPustaka</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="koleksi.html">Koleksi Buku</a></li>
+          <li class="nav-item"><a class="nav-link" href="pinjam.html">Peminjaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+        <span class="text-white me-3">
+          ❤️ <span class="badge bg-danger" id="badgeFavorit">0</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h5 class="mb-1">Katalog Koleksi Buku</h5>
+    <p class="text-muted mb-4">Total: <strong id="jumlahTampil">0</strong> buku ditemukan</p>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-5">
+            <label class="form-label small text-muted">Cari Judul / Pengarang</label>
+            <input type="text" class="form-control" id="inputCari" placeholder="Ketik untuk mencari...">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small text-muted">Filter Kategori</label>
+            <select class="form-select" id="filterKategori">
+              <option value="semua">Semua Kategori</option>
+              <option value="Teknologi">Teknologi</option>
+              <option value="Fiksi">Fiksi</option>
+              <option value="Sains">Sains</option>
+              <option value="Sejarah">Sejarah</option>
+              <option value="Matematika">Matematika</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small text-muted">Filter Status</label>
+            <select class="form-select" id="filterStatus">
+              <option value="semua">Semua Status</option>
+              <option value="tersedia">Tersedia</option>
+              <option value="dipinjam">Dipinjam</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-success">
+              <tr>
+                <th>No</th>
+                <th>Judul Buku</th>
+                <th>Pengarang</th>
+                <th>Kategori</th>
+                <th>Tahun</th>
+                <th>Status</th>
+                <th>Favorit</th>
+              </tr>
+            </thead>
+            <tbody id="tabelKoleksi"></tbody>
+          </table>
+        </div>
+        <div id="pesanKosong" class="text-center py-5 d-none">
+          <p class="text-muted">🔍 Tidak ada buku yang sesuai dengan pencarian Anda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

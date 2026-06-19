@@ -1,0 +1,22 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.list-group-item.active {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.card {
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.progress {
+  height: 18px;
+  border-radius: 10px;
+}
